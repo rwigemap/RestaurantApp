@@ -1,0 +1,22 @@
+﻿@model Restaurant.Models.Restaurant
+
+@{
+     Layout = "~/Pages/Shared/_Layout.cshtml";
+ }
+
+<div class="row"><img style="width: 100em;height: 30em;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQz2_q9zpZO3y1rZhXNlnUPoR8Q1vkZP1BCiOBgSiuWBCJz_gTj"/></div>
+<div class="row">
+    <div class="col-md-2"></div><div class="col-md-8">
+        <div class="text-center"><h3 class="text-success">Restaurant</h3></div>
+        <table class="table table-borderless">
+            <tr><td>Restaurant Name :</td><td>@Model.Name</td></tr>
+            <tr><td>Restaurant Cuisine type: </td><td>@Model.Cuisine</td></tr>
+            <tr><td colspan="2"><h6 class="text-success">@Html.ActionLink("All Restaurant", "Index","Home")</h6></td></tr>
+        </table>
+    </div>
+    
+     </div><div class="col-md-2"></div>
+
+
+
+

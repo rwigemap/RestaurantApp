@@ -1,0 +1,39 @@
+﻿@using Microsoft.EntityFrameworkCore.Infrastructure
+@using Restaurant.Models
+@model Restaurant
+ @{
+     Layout = "~/Pages/Shared/_Layout.cshtml";
+ }
+ 
+
+     @*You should change this form and use razor tags*@
+        
+<div class="row"><img style="width: 100em;height: 30em;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQz2_q9zpZO3y1rZhXNlnUPoR8Q1vkZP1BCiOBgSiuWBCJz_gTj"/></div>
+<div class="row">
+    <div class="col-md-2"></div><div class="col-md-8">
+        <div class="text-center"><h3 class="text-success">Add Restaurant</h3></div>
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" name="Name" class="form-control"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cuisine" class="control-label"></label>
+                <select asp-for="Cuisine" name="Cuisine" class="form-control">
+
+                    @foreach (CuisineType c in (CuisineType[]) Enum.GetValues(typeof(CuisineType)))
+                    {
+                        <option value="@Convert.ToInt32(c)">@c</option>
+                    }
+                </select>
+                <span asp-validation-for="Cuisine" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" asp-for="" value="Save" class="btn btn-outline-success"/>
+            </div>
+        </form>
+    </div>
+     </div><div class="col-md-2"></div>    
